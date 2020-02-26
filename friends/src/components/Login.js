@@ -1,9 +1,10 @@
 import React from 'react';
+import '../App.css';
 
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 
-isLoading
+
 class Login extends React.Component {
     state = {
         credentials: {
@@ -21,6 +22,8 @@ class Login extends React.Component {
         });
     };
 
+    
+    
     login = e => {
         e.preventDefault();
 
@@ -36,20 +39,23 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="login-box">
                 <form onSubmit={this.login}>
-                    <imput
+                    <input
                         type='text'
                         name='username'
                         value={this.state.credentials.username}
-                        onChange={this.handleChange}
+                        onChange={this.handleChange }
+                        placeholder="Enter Username"
                     />
                     <input
                         type='password'
                         name='password'
                         value={this.state.credentials.password}
                         onChange={this.handleChange}
+                        placeholder="Enter Password"
                     />
+                    <button type='submit'>Login</button>
                 </form>
             </div>
         )
